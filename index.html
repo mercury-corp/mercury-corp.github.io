@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic Bio Page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            text-align: center;
+            overflow: hidden;
+            transition: background 0.5s ease-in-out;
+            background: #121212;
+            color: white;
+        }
+
+        /* Gradient Animated Background */
+        .gradient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #444, #111, #1a1a1a);
+            background-size: 400% 400%;
+            animation: gradientShift 8s infinite alternate ease-in-out;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        /* Homepage */
+        .homepage {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 47px;
+            color: #f5f5f5;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .bio-button {
+            width: 200px;
+            background: linear-gradient(45deg, #444, #5555);
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-transform: uppercase;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .bio-button:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Full-screen Bio Page */
+        .bio-page {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1s ease-in-out;
+            z-index: 3;
+        }
+
+        .bio-content {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            max-width: 600px;
+        }
+        
+
+        .bio-title {
+            font-size: 65px;
+            color: white;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .bio-text {
+            font-size: 20px; /* Increased font size */
+            font-weight: 1000; /* Make text bolder */
+            color: white;
+            margin-top: 20px;
+            line-height: 1.6; /* Slightly increased line-height for better readability */
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.6); /* Added shadow for a glowing effect */
+            letter-spacing: 0.5px; /* Slight letter spacing for a futuristic feel */
+        }
+
+        .bio-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            margin-bottom: 20px;
+        }
+
+        .back-button {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 10px 85px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .back-button:hover {
+            background-color: gray;
+        }
+
+        #background-music {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="gradient-bg"></div>
+
+    <div id="homepage" class="homepage">
+        <h1>Welcome to Mercury Network</h1>
+<a href="https://discord.gg/uYJvHPcbWN">Discord Link (Clickable)</a>
+        <p>Current Operation; BlueMoon (Bons British Army)  - Administration Team</p>
+        <div class="button-container">
+            <button class="bio-button" onclick="showBio('messiah')">Messiah</button>
+            <button class="bio-button" onclick="showBio('angel')">Angel</button>
+            <button class="bio-button" onclick="showBio('kingbob')">Kingbob</button>
+            <button class="bio-button" onclick="showBio('ej')">ejfrmar</button>
+            <button class="bio-button" onclick="showBio('omniety')">Omniety</button>
+        </div>
+    </div>
+
+    <!-- Bio Pages -->
+    <div id="bio-messiah" class="bio-page" style="background-image: url('https://media.discordapp.net/attachments/1335024878046416977/1335378716066320506/w7sdShl.png?ex=679ff3d8&is=679ea258&hm=1a9a28732f4d4e36098acd6d84fe8e6759adfd78066918cf36ac2b220444d412&=&width=1193&height=671');">
+        <div class="bio-content">
+            <img class="bio-image" src="https://media.discordapp.net/attachments/1335024878046416977/1335377566902521956/zKZhPpU.png?ex=679ff2c6&is=679ea146&hm=5826502e30a79e2ed450b9e8fc3b43479f306163d3d406bc9228308e8e65bb56&=" alt="Messiah">
+            <h1 class="bio-title">Messiah</h1>
+            <p class="bio-text">😣 Quote️: "Fym you like me?"
+            <p class="bio-text">👑 Rank: Commander-in-Chief</p>
+            <p class="bio-text">📧 Email: t1xfpgwhr@mozmail.com</p>
+            <p class="bio-text">💬 Discord: mercury.messiah
+</p>
+            <button class="back-button" onclick="goHome()">Back</button>
+        </div>
+    </div>
+
+    <div id="bio-angel" class="bio-page" style="background-image: url('https://via.placeholder.com/1920x1080/222/000000?text=Angel');">
+        <div class="bio-content">
+            <img class="bio-image" src="https://via.placeholder.com/200/222/ffffff?text=Angel" alt="Angel">
+            <h1 class="bio-title">Angel</h1>
+            <p class="bio-text">🤫 Files, haven't been recivied updating later!</p>
+            <button class="back-button" onclick="goHome()">Back</button>
+        </div>
+    </div>
+
+    <div id="bio-kingbob" class="bio-page" style="background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallup.net%2Fwp-content%2Fuploads%2F2018%2F10%2F02%2F909912-nazi-history-adolf-hitler-dark-evil-military-anarchy-war.jpg&f=1&nofb=1&ipt=2ecc9f78da765194335b8acc70030d0019ef9eeb40c446b9ec8989dc0da3da8e&ipo=images');">
+        <div class="bio-content">
+            <img class="bio-image" src="https://images-ext-1.discordapp.net/external/zn1vSu7rnr9Ykbd_h8-Hq69GNXh8QXnuSLnSY3Nf1Cg/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/784928865650737153/6227b526341cca49731e12f26128ec41.webp" alt="Kingbob">
+            <h1 class="bio-title">Kingbob</h1>
+            <p class="bio-text">🤵 Quote: "Unset"</p>
+            <p class="bio-text">💎 Rank: Chief of Operations</p>
+            <p class="bio-text">📧 Email: Unset</p>
+            <p class="bio-text">💬 Discord: war.vex</p>
+            <button class="back-button" onclick="goHome()">Back</button>
+        </div>
+    </div>
+
+    <div id="bio-ej" class="bio-page" style="background-image: url('https://images-ext-1.discordapp.net/external/ORmLZkSOggPezU-4r2_lzugBkuFw8EOdPGYdX5bXauM/%3Fu%3Dhttps%253A%252F%252Fwww.wallpaperflare.com%252Fstatic%252F879%252F471%252F701%252Fadolf-hitler-nazi-black-background-mustache-wallpaper.jpg%26f%3D1%26nofb%3D1%26ipt%3D013010f1799b1a5760a83236516a13b4bddddad6d0c2f8c5759c749a38234137%26ipo%3Dimages/https/external-content.duckduckgo.com/iu/?width=1193&height=671');">
+        <div class="bio-content">
+            <img class="bio-image" src="https://images-ext-1.discordapp.net/external/XAp4I083IBsofkI8kAc4mBynNUJMSpegtEH-x8lPfxs/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/1001671401159270501/1d5eac64b8f48df07ed273ff217d1ff0.webp" alt="ejfrmar">
+            <h1 class="bio-title">EJ</h1>
+            <p class="bio-text">🤵 Quote: "mah bad og, im a newgen"</p>
+            <p class="bio-text">💎 Rank: Co-Operator</p>
+            <p class="bio-text">📧 Email: 62bigblackmenonmylefbuttcheek@gmail.com</p>
+            <p class="bio-text">💬 Discord: ejfrmar</p>
+            <p class="bio-text">📜 Addon: 6'4 Dick</p>
+            <button class="back-button" onclick="goHome()">Back</button>
+        </div>
+    </div>
+
+    <div id="bio-omniety" class="bio-page" style="background-image: url('https://via.placeholder.com/1920x1080/444/000000?text=Omniety');">
+        <div class="bio-content">
+            <img class="bio-image" src="https://via.placeholder.com/200/444/ffffff?text=Omniety" alt="Omniety">
+            <h1 class="bio-title">Omniety</h1>
+            <p class="bio-text">🤵 Quote: "omniety = diety = god"</p>
+            <p class="bio-text">💎 Rank: Co-Operator</p>
+            <p class="bio-text">📧 Email: omnietyneverwavers@cyberfear.com</p>
+            <p class="bio-text">💬 Discord: corporatedealing</p>
+            <button class="back-button" onclick="goHome()">Back</button>
+        </div>
+    </div>
+
+    <!-- Single Background Music -->
+    <audio id="background-music" loop autoplay>
+        <source src="https://cdn.discordapp.com/attachments/1335024878046416977/1335379442754781194/TUKxYI7.mp3?ex=679ff485&is=679ea305&hm=66611597b1afa8e6af3e4016b79a5595f85ad7d01565ab2c02b273e2172bd5b6&" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        function showBio(person) {
+            document.getElementById("homepage").style.display = "none";
+            document.getElementById("bio-" + person).style.opacity = "1";
+            document.getElementById("bio-" + person).style.visibility = "visible";
+        }
+
+        function goHome() {
+            document.querySelectorAll('.bio-page').forEach(page => {
+                page.style.opacity = "0";
+                page.style.visibility = "hidden";
+            });
+            document.getElementById("homepage").style.display = "flex";
+        }
+    </script>
+</body>
+</html>
