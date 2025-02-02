@@ -10,7 +10,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>fuck niggas</title>
+    <title>Audio Autoplay</title>
+</head>
+<body>
+    <audio id="background-music" src="https://github.com/mercury-corp/mercury-corp.github.io/raw/refs/heads/main/1AMTV.mp3" autoplay loop></audio>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var audio = document.getElementById("background-music");
+    
+            function playAudio() {
+                audio.play().catch(error => {
+                    console.log("Autoplay blocked, waiting for user interaction.");
+                });
+            }
+    
+            // Try to play immediately
+            playAudio();
+    
+            // Play on any user interaction (click, keypress)
+            document.addEventListener("click", playAudio, { once: true });
+            document.addEventListener("keypress", playAudio, { once: true });
+        });
+    </script>    
+</body>
+</html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercury</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap');
@@ -61,7 +90,7 @@
         }
 
         h1 {
-            font-size: 65px;
+            font-size: 67px;
                         font-weight: bold;
                         margin-bottom: 40px;
             color: #f5f5f5;
@@ -77,7 +106,7 @@
         }
 
         .bio-button {
-            width: 150px;
+            width: 210px;
             background: linear-gradient(45deg, #444, #5555);
             color: white;
             border: none;
@@ -219,7 +248,7 @@
             <h1 class="bio-title">Sacrifice</h1>
             <p class="bio-text">😣 Quote: "There is the possibility to be suddenly arrested for hacking."
             <p class="bio-text">👑 Rank: Agent</p>
-            <p class="bio-text">📧 Email: unset</p>
+            <p class="bio-text">📧 Email: g7x4m2q9z8@mailum.com</p>
             <p class="bio-text">💬 Discord: murderingfamilys
 </p>
             <button class="back-button" onclick="goHome()">Back</button>
@@ -328,11 +357,6 @@
     </div>
 
     <!-- Single Background Music -->
-    <audio id="background-music" loop autoplay>
-        <source src="https://mercury-corp.github.io/0638314e-e7d5-455c-8657-c26ee9ff1123.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-    </audio>
-
     <script>
         function showBio(person) {
             document.getElementById("homepage").style.display = "none";
