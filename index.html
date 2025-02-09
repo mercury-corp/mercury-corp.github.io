@@ -1,49 +1,16 @@
-
-<title>war</title>
-<meta content="war" property="og:title" />
-<meta content="war" property="og:description" />
-<meta content="war" property="og:url" />
-<meta content="https://media.discordapp.net/attachments/1310986864878161980/1337576311979249724/CHgfaSP.png?ex=67a7f283&is=67a6a103&hm=8ed179a9fe6cbdcee968d419fed2d5eaf9e6d6cc42f21ecb9e400b6a5c989d1e&=" property="og:image" />
-<meta content="#000000" data-react-helmet="true" name="theme-color" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audio Autoplay</title>
-</head>
-<body>
-    <audio id="background-music" src="https://github.com/mercury-corp/mercury-corp.github.io/raw/refs/heads/main/1AMTV.mp3" autoplay loop></audio>
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var audio = document.getElementById("background-music");
-    
-            function playAudio() {
-                audio.play().catch(error => {
-                    console.log("Autoplay blocked, waiting for user interaction.");
-                });
-            }
-    
-            // Try to play immediately
-            playAudio();
-    
-            // Play on any user interaction (click, keypress)
-            document.addEventListener("click", playAudio, { once: true });
-            document.addEventListener("keypress", playAudio, { once: true });
-        });
-    </script>    
-</body>
-</html>
+    <meta name="description" content="Official ONYX Seized Asset Notice">
+    <title>ONYX Seized Assets</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mercury</title>
+    <!-- Google Font for modern, sleek typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap');
-
+        /* Global Styles */
         * {
             margin: 0;
             padding: 0;
@@ -51,349 +18,203 @@
         }
 
         body {
-            font-family: 'Rajdhani', sans-serif;
-            text-align: center;
-            overflow: hidden;
-            transition: background 0.5s ease-in-out;
-            background: #121212;
-            color: white;
-        }
-
-        /* Gradient Animated Background */
-        .gradient-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(-.2deg, #670808, #670808, #1a1a1a);
-            background-size: 400% 400%;
-            animation: gradientShift 8s infinite alternate ease-in-out;
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 100% 50%; }
-        }
-
-        /* Homepage */
-        .homepage {
-            position: relative;
-            width: 100%;
-            height: 100vh;
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #f0f0f0;
+            min-height: 100vh;
             display: flex;
-            align-items: center;
             justify-content: center;
-            flex-direction: column;
-            color: white;
-            z-index: 2;
-        }
-
-        h1 {
-            font-size: 87px;
-                        font-weight: bold;
-                        margin-bottom: 40px;
-            color: #f5f5f5;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-            font-family: 'Orbitron', sans-serif;
-        }
-        
-        
-        p {
-            font-size: 17px;
-                        font-weight: bold;
-                        margin-bottom: 10px;
-            color: #f5f5f5;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-            font-family: 'Orbitron', sans-serif;
-        }
-
-        .button-container {
-            display: flex;
-            gap: 20px;
-            margin-top:20px;
-            flex-wrap: wrap;
-        }
-
-        .bio-button {
-            width: 190px;
-            background: linear-gradient(-2deg, #170808, #670808);
-            color: white;
-            border: none;
-            padding: 22px;
-            font-size: 24.2px;
-            font-weight: bold;
-            border-radius: 16px;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-transform: uppercase;
-            font-family: 'Orbitron', sans-serif;
-        }
-
-        .bio-button:hover {
-            transform: scale(1.08);
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-        }
-
-        /* Full-screen Bio Page */
-        .bio-page {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
             align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 1s ease-in-out;
-            z-index: 3;
-        }
-
-        .bio-content {
             text-align: center;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 45px;
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-            max-width: 600px;
-        }
-        
-
-        .bio-title {
-            font-size: 75px;
-            color: white;
-            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-            font-family: 'Orbitron', sans-serif;
         }
 
-        .bio-text {
-            font-size: 20px; /* Increased font size */
-            font-weight: 1000; /* Make text bolder */
-            color: white;
-            margin-top: 20px;
-            line-height: 1.6; /* Slightly increased line-height for better readability */
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.6); /* Added shadow for a glowing effect */
-            letter-spacing: 0.5px; /* Slight letter spacing for a futuristic feel */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            padding: 40px;
+            margin: 0 auto;
         }
 
-        .bio-image {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid white;
+        header {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #444;
+        }
+
+        header img {
+            max-width: 180px;
             margin-bottom: 20px;
         }
 
-        .back-button {
-            background-color: white;
-            color: black;
-            border: none;
-            padding: 10px 85px;
-            font-size: 16px;
-            font-weight: bold;
+        h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: #e63946;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        p.notice {
+            font-size: 1.2rem;
+            color: #dcdcdc;
+            font-weight: 500;
+            margin-bottom: 40px;
+        }
+
+        /* Section Styles */
+        section {
+            background: #1e1e1e;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+            margin-bottom: 50px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 50px rgba(0, 0, 0, 0.8);
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ff4d4d;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            font-size: 1.1rem;
+            color: #bdbdbd;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        section ul {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        section ul li {
+            font-size: 1.2rem;
+            color: #f0f0f0;
+            padding: 10px 0;
+            border-bottom: 1px solid #444;
+            transition: color 0.3s ease, padding-left 0.3s ease;
+        }
+
+        section ul li:hover {
+            color: #ff4d4d;
+            padding-left: 10px;
+        }
+
+        /* Call to Action Button */
+        .cta {
+            margin-top: 40px;
+        }
+
+        .cta a {
+            display: inline-block;
+            background-color: #e63946;
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 15px 40px;
             border-radius: 8px;
-            cursor: pointer;
-            margin-top: 15px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        .back-button:hover {
-            background-color: gray;
+        .cta a:hover {
+            background-color: #d32f2f;
+            transform: translateY(-5px);
         }
 
-        #background-music {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 0;
-            opacity: 0;
+        /* Footer */
+        footer {
+            color: #aaa;
+            margin-top: 60px;
+            font-size: 1.1rem;
+        }
+
+        footer a {
+            color: #ff4d4d;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        section, h1, p {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            .cta a {
+                padding: 12px 30px;
+                font-size: 1.1rem;
+            }
+
+            footer {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="gradient-bg"></div>
 
-    <div id="homepage" class="homepage">
-        <h1>war</h1>
-        <p>war family</p>
-        <div class="button-container">
-            <button class="bio-button" onclick="showBio('messiah')">arabic</button>
-            <button class="bio-button" onclick="showBio('antichrist')">christ</button>
-            <button class="bio-button" onclick="showBio('mulli')">Mulli</button>
-            <button class="bio-button" onclick="showBio('c4')">c4</button>
-                        <button class="bio-button" onclick="showBio('eup')">Euphoria</button>
-            <button class="bio-button" onclick="showBio('terror')">Terror</button>
-        </div>
-        <div class="button-container">
-            <button class="bio-button" onclick="showBio('sac2')">Sacrifice</button>
-            <button class="bio-button" onclick="showBio('angel')">Angel</button>
-            <button class="bio-button" onclick="showBio('kingbob')">OMEGA</button>
-            <button class="bio-button" onclick="showBio('ej')">ejfrmar</button>
-            <button class="bio-button" onclick="showBio('omniety')">Omniety</button>
-</div>
-    </div>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <img src="https://media.discordapp.net/attachments/1335067547757973545/1337935852168282164/ONYXPUBLIC.webp?ex=67a9415c&is=67a7efdc&hm=45f7ab985e6d3d6b63b535410844e845d2d403d5e249c92f7ad4c6f5a30e7c7d&=" alt="Onyx Logo">
+            <h1>Seized Asset Notice</h1>
+            <p class="notice">This is an official ONYX notice regarding seized assets.</p>
+        </header>
 
-    <!-- Bio Pages -->
-    <div id="bio-messiah" class="bio-page" style="background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Fa2%2F93%2Ff1%2Fa293f1d01221aaf6399d60a0ceaabe60.jpg&f=1&nofb=1&ipt=4c38ae21851f183e38e3d1e28d40e27508ee3dcf9589de368ccaa3cd2eced682&ipo=images&">
-        <div class="bio-content">
-            <img class="bio-image" src="https://cdn.discordapp.com/attachments/1310986864878161980/1337574663907442760/QTs9Skn.jpg?ex=67a7f0fa&is=67a69f7a&hm=697fb21215d78c334eff51b9a991a9f54ca776460fa2be117fe8c9a4b9739996&" alt="Cipher">
-            <h1 class="bio-title">Cipher</h1>
-            <p class="bio-text">😣 Quote: "Bitchs Leave when Money Talks"
-            <p class="bio-text">👑 Rank: Founder</p>
-            <p class="bio-text">📧 Email: nigga you aint getting</p>
-            <p class="bio-text">💬 Discord: arabicwar
-</p>
-            <button class="back-button" onclick="goHome()">Back</button>
-        </div>
-    </div>
-        <!-- Bio Pages -->
-    <div id="bio-eup" class="bio-page" style="background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fm0C0eJh.jpg&f=1&nofb=1&ipt=a9b46f77e57081e6ccb763865a0d0fdfc0ca80b52e155f89ff04d836cecb78dc&ipo=images">
-        <div class="bio-content">
-            <img class="bio-image" src="https://cdn.discordapp.com/attachments/1323826352692002816/1335783690063712337/IMG_0549.png?ex=67a16d01&is=67a01b81&hm=09243d63bbfc324bd140dc302728ca493843488ab1271c82e7f346dd10ca231b&" alt="Cipher">
-            <h1 class="bio-title">Euphoria</h1>
-            <p class="bio-text">quote: “hiding in the shadows” 
-            <p class="bio-text">not apart of war just the best friend you'll met
-            <p class="bio-text">discord: slittedjaw
-            <p class="bio-text">emaiL: ao.sobral@rio.rj.gov.br
-</p>
-            <button class="back-button" onclick="goHome()">Back</button>
-        </div>
-    </div>
-         <div id="bio-sac2" class="bio-page" style="background-image: url('https://cdn.discordapp.com/attachments/1283764311809851404/1285739640455692329/bliss.jpeg?ex=67a0a41a&is=679f529a&hm=e8a5b7a311cf1c0c49d454c53d1474416e3ae2174cd696cb6143e72e57eb28b9&">
-        <div class="bio-content">
-            <img class="bio-image" src="https://cdn.discordapp.com/attachments/1335666435535671408/1335671844287811604/IMG_6375.jpg?ex=67a104d7&is=679fb357&hm=b21c79ae914d7650ab0c77ac80bd34994e615b0ed5bef51256866045b9791fda&" alt="Cipher">
-            <h1 class="bio-title">Sacrifice</h1>
-            <p class="bio-text">😣 Quote: "There is the possibility to be suddenly arrested for hacking."
-            <p class="bio-text">👑 Rank: Agent</p>
-            <p class="bio-text">📧 Email: g7x4m2q9z8@mailum.com</p>
-            <p class="bio-text">💬 Discord: murderingfamilys
-</p>
-            <button class="back-button" onclick="goHome()">Back</button>
-        </div>
-        </div>
-        <!-- Bio Pages -->
-    <div id="bio-mulli" class="bio-page" style="background-image: url('https://how-about-no.esal.cl/7b554a8eb6634bada3841456552d546c/_rhsX4AN8://4aabQ.qsKbZmsAgE.EpI/zdnZ2MjFn00/ceVaxfbff8x76464zW6/PzpL22222m9gGEBBB9Y/6pbP6.EgT?Tr=hHZUD-Jc&jO=QfqnIfQN&Oh=W0Up6oTTKm-cKDZ2KElMalyMIrYNdA8uO6~ziOhKHLUtHD-tJSefJX1NVxy47~~O&=&kJQJUq=8S-N&APXbqz2=WCLKC8gE&GTwGL=v3v&Dg9Ml~=SJQ">
-        <div class="bio-content">
-            <img class="bio-image" src="https://how-about-no.esal.cl/7b554a8eb6634bada3841456552d546c/_rhsX4AN8://4aabQ.qsKbZmsAgE.EpI/zdnZ2MjFn00/ceVaxfbff8x76464zW6/PzpL22KD2299EFGMGBY/Ii8WPO~653wo0KU-kSmSg-FMfeJxqINN_a_C-Sx.xk31?H8=2g-ZVgQ9&Nz=jdYAqyii&z2=iChkLvKK-HJRSSQleBajBbbdxx5508bCUpkPkvphctJmEmmgFa7y9q47Nbjs~PC~&=&LljlZY=0FE5&kdBkr=f1N&0u3oUV=68z" alt="Cipher">
-            <h1 class="bio-title">Mulli</h1>
-            <p class="bio-text">🤵 Quote: "Manners Maketh Man"
-            <p class="bio-text">👑💎 Rank: Commanding of I & E Operations</p>
-            <p class="bio-text">📧 Email: Unset</p>
-            <p class="bio-text">💬 Discord: 8mulli.
-</p>
-            <button class="back-button" onclick="goHome()">Back</button>
-        </div>
-    </div>
-        <!-- Bio Pages -->
-    <div id="bio-c4" class="bio-page" style="background-image: url('https://how-about-no.esal.cl/1ad6fd56f11841ea8938a6ff30852f57/_rhs-OcQI://OCCUt.NW5UdPWczs.s74/1f~dYMKE~TT/DmkkygCUCyWQQbOOV71/q17RYYEEYYXEEEEEK26/v9v_AZTT.xIgk?Y3=9DPGatEm&po=jQcn~WQc&o9=H7eS1B1Y5D90Ektus0NQ8ffppKc6VSSinwTlZB5vPEMzskaMtuu~QjpfIc6VOTS1&=&ltjtGc=qm-I&b7LWcR0=edzsdqMX&8YH8z=loo&aM4uKi=Lky">
-        <div class="bio-content">
-            <img class="bio-image" src="https://how-about-no.esal.cl/1ad6fd56f11841ea8938a6ff30852f57/_rhs-OcQI://OCCUt.NW5UdPWczs.s74/1f~dYMKE~TT/DmkkygCUCyWQQbOOV71/q17RYYEEsPas2su4ufa/v9v_Awwn.ME5?5n=BrYxXL0X&~F=yNOAfINn&FB=oWVbHqYRP7B0g-mMJtjuMUN8c66fcVnSivhh5dFrG0rDsmBL-kCNgKQcCWO33qcq&=&GLyLxO=bkDc&V1gIOds=SHPzHbEM&K57KP=orF&XEu24h=g-J" alt="Cipher">
-            <h1 class="bio-title">C4</h1>
-            <p class="bio-text">😣 Quote: "if we live fast let us die young"
-            <p class="bio-text">👑 Rank: Mercury Staff Member</p>
-            <p class="bio-text">📧 Email: c44@cyberfear.com</p>
-            <p class="bio-text">💬 Discord: breaklocks
-</p>
-            <button class="back-button" onclick="goHome()">Back</button>
-        </div>
-    </div>
-        <!-- Bio Pages -->
-    <div id="bio-terror" class="bio-page" style="background-image: url('https://how-about-no.esal.cl/1ad6fd56f11841ea8938a6ff30852f57/_rhs-OcQI://OCCUt.NW5UdPWczs.s74/1f~dYMKE~TT/DkLJgULtOcWQUqeeIH1/q17RYPdRXa0u0MKX8p2/w1UIH_Wze_WYzfY_bPavj4_OMnpTp_EDTrAh_13rDot.tLr?rb=sEDYCmJJ&cd=~63VOZwq&ds=oRRRPrxsrgXLgJg-KQJppnO6TUZZcbqHSbSdY1D5k-aYXuM0NuJQ264nIc~pZA3H&=&P4~4Y3=iaMw&hxuT3Bm=ol-kliLt&QrGQ-=HHdM&JtNjQH=4aK">
-        <div class="bio-content">
-            <img class="bio-image" src="https://how-about-no.esal.cl/1ad6fd56f11841ea8938a6ff30852f57/_rhs-OcQI://OCCUt.NW5UdPWczs.s74/1f~dYMKE~TT/DkLJgULtOcWQUqeeIH1/q17RYPdP5zaX2MMauXu/b7UqbE_n_wv.suz?zT=DksBuXk-&Ax=QOWw6qnU&xD=do5exRDR9-atzEajf~22KUIf83VAiioSZRGBl5BED-mM2JgCjKLU6ncpUOwZIqSd&=&9JQJBW=eLmV&ROjRI=Kf8&eqH7du=ToF" alt="Cipher">
-            <h1 class="bio-title">Terror</h1>
-            <p class="bio-text">🤵 Quote: "The Unforgiving"
-            <p class="bio-text">👑 Rank: Commander of Training Services</p>
-            <p class="bio-text">📧 Email: viperhortez@gmail.com</p>
-            <p class="bio-text">💬 Discord: blacklite_terror
-</p>
-            <button class="back-button" onclick="goHome()">Back</button>
-        </div>
-    </div>
-    
-        <!-- Bio Pages -->
-    <div id="bio-antichrist" class="bio-page" style="background-image: url('https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Feskipaper.com%2Fimages%2Finspirational-wallpaper-18.jpg&f=1&nofb=1&ipt=9b0a477e0d4458e2c35fe17dc446b27f3c5d4cc10dac5c07344e1baf46dfd72e&ipo=images">
-        <div class="bio-content">
-            <img class="bio-image" src="https://cdn.discordapp.com/avatars/1327484040705736745/8d7b45534539550f4b30e852751f2a23.webp?size=1024" alt="Cipher">
-            <h1 class="bio-title">Antichrist</h1>
-            <p class="bio-text">😣 Quote: "liu ♥"
-            <p class="bio-text">👑 Rank: Commander-in-Chief</p>
-            <p class="bio-text">📧 Email: Classified to XiC</p>
-            <p class="bio-text">💬 Discord: itwaspromised
-</p>
-            <button class="back-button" onclick="goHome()">Back</button>
-        </div>
+        <!-- Main Content Section -->
+        <section>
+            <h2>Seized Assets Overview</h2>
+            <p>As part of an ongoing investigation, the following assets have been seized by ONYX. Any unauthorized access is strictly prohibited.</p>
+
+            <h3>Seized Items:</h3>
+            <ul>
+                <li>Website</li>
+
+            </ul>
+
+            <p>If you require further information regarding the seized assets, please reach out through the contact options below.</p>
+
+            <!-- Call to Action Button -->
+            <div class="cta">
+
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 ONYX Corporation </a></p>
+        </footer>
     </div>
 
-    <div id="bio-angel" class="bio-page" style="background-image: url('https://media.discordapp.net/attachments/1335648218008260822/1335674139289063546/image.png?ex=67a106fa&is=679fb57a&hm=daa4fc241c1cb01d0f3d8df5bc6d09dd5e6b586e5c09648a9460fa87ec699a76&=&format=webp&quality=lossless');">
-        <div class="bio-content">
-            <img class="bio-image" src="https://cdn.discordapp.com/attachments/1335648218008260822/1335674107706212543/surreal_beauty.png?ex=67a106f2&is=679fb572&hm=93bdc3f6ff84fa37c304f5314eaf29f4fb0c8d455dc24e1191c48a76712958a2&" alt="Angel">
-            <h1 class="bio-title">Angel</h1>
-            <p class="bio-text">😣 Quote: "Angelic Hell"
-            <p class="bio-text">👑 Rank: CoIEo</p>
-            <p class="bio-text">📧 Email: find it</p>
-            <p class="bio-text">💬 Discord: angel_mercurycorp </p>
-            <button class="back-button" onclick="goHome()">Back</button>
-        </div>
-    </div>
-
-    <div id="bio-kingbob" class="bio-page" style="background-image: url('https://media.discordapp.net/attachments/1335412975716143225/1335428527268561034/Spiderman.jpg?ex=67a0223b&is=679ed0bb&hm=8477c5550569f667d404c61276500fcc67c2e4f9f7c641877901b50c81c6cbf9&=&width=1193&height=671');">
-        <div class="bio-content">
-            <img class="bio-image" src="https://media.discordapp.net/attachments/1335412975716143225/1335428825726582905/spiderman-pfp-2324.png?ex=67a02283&is=679ed103&hm=072f74fab159756386e82c2acd06669a7d18058c2ecb3ad7baf5e9b572f4ca96&=&width=350&height=350">
-            <h1 class="bio-title">OMEGA</h1>
-            <p class="bio-text">🤵 Quote: "Unset"</p>
-            <p class="bio-text">💎 Rank: Chief of Operations</p>
-            <p class="bio-text">📧 Email: Unset</p>
-            <p class="bio-text">💬 Discord: mercury.omega</p>
-            <button class="back-button" onclick="goHome()">Back</button>
-        </div>
-    </div>
-
-    <div id="bio-ej" class="bio-page" style="background-image: url('https://images-ext-1.discordapp.net/external/ORmLZkSOggPezU-4r2_lzugBkuFw8EOdPGYdX5bXauM/%3Fu%3Dhttps%253A%252F%252Fwww.wallpaperflare.com%252Fstatic%252F879%252F471%252F701%252Fadolf-hitler-nazi-black-background-mustache-wallpaper.jpg%26f%3D1%26nofb%3D1%26ipt%3D013010f1799b1a5760a83236516a13b4bddddad6d0c2f8c5759c749a38234137%26ipo%3Dimages/https/external-content.duckduckgo.com/iu/?width=1193&height=671');">
-        <div class="bio-content">
-            <img class="bio-image" src="https://images-ext-1.discordapp.net/external/XAp4I083IBsofkI8kAc4mBynNUJMSpegtEH-x8lPfxs/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/1001671401159270501/1d5eac64b8f48df07ed273ff217d1ff0.webp" alt="ejfrmar">
-            <h1 class="bio-title">EJ</h1>
-            <p class="bio-text">🤵 Quote: "mah bad og, im a newgen"</p>
-            <p class="bio-text">💎 Rank: Co-Operator</p>
-            <p class="bio-text">📧 Email: 62bigblackmenonmylefbuttcheek@gmail.com</p>
-            <p class="bio-text">💬 Discord: ejfrmar</p>
-            <button class="back-button" onclick="goHome()">Back</button>
-        </div>
-    </div>
-
-    <div id="bio-omniety" class="bio-page" style="background-image: url('https://cdn.discordapp.com/attachments/1330926531077214360/1335668322217365584/9wm9E1L.gif?ex=67a1018f&is=679fb00f&hm=44a5a4a6dfafc9fdb097e4c5bea070ecea70dae9b6766de35aea4fbbde068413&');">
-        <div class="bio-content">
-            <img class="bio-image" src="https://cdn.discordapp.com/attachments/1330926531077214360/1335668225425281206/1.png?ex=67a10178&is=679faff8&hm=a6ca9aef8df904cc500263f670be7aeaac5ee54ee0d0f5ba963c4d05c06a9434&" alt="Omniety">
-            <h1 class="bio-title">Omniety</h1>
-            <p class="bio-text">🤵 Quote: "omniety = diety = god"</p>
-            <p class="bio-text">💎 Rank: Co-Operator</p>
-            <p class="bio-text">📧 Email: omnietyneverwavers@cyberfear.com</p>
-            <p class="bio-text">💬 Discord: corporatedealing / governmentdealing</p>
-            <button class="back-button" onclick="goHome()">Back</button>
-        </div>
-    </div>
-
-    <!-- Single Background Music -->
-    <script>
-        function showBio(person) {
-            document.getElementById("homepage").style.display = "none";
-            document.getElementById("bio-" + person).style.opacity = "1";
-            document.getElementById("bio-" + person).style.visibility = "visible";
-        }
-
-        function goHome() {
-            document.querySelectorAll('.bio-page').forEach(page => {
-                page.style.opacity = "0";
-                page.style.visibility = "hidden";
-            });
-            document.getElementById("homepage").style.display = "flex";
-        }
-    </script>
 </body>
 </html>
